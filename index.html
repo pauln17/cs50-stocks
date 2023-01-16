@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>PORTFOLIO</h1>
+    <table class="quoted">
+        <thead>
+            <tr class="quoted_row">
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Prices</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stock_info %}
+                <tr class="quoted_row">
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["name"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["price"] }}</td>
+                    <td>{{ usd(stock["price"] * stock["shares"]) }}</td>
+
+            {% endfor %}
+
+            </tr>
+
+            <tr class="quoted_row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Cash</td>
+                <td>{{ cash_bal }}</td>
+            </tr>
+            <tr class="quoted_row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total Value</td>
+                <td>{{ total }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+{% endblock %}

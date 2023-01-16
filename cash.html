@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cash Deposit
+{% endblock %}
+
+{% block main %}
+    <div class="cash_page">
+        <h1>Deposit</h1>
+        <table>
+            <thead>
+                <tr class="quoted_row">
+                    <th>Account Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="quoted_row">
+                    <td> {{ cash_balance }} </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form class="deposit" action="/cash" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="deposit" name="deposit" placeholder="Amount" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Deposit</button>
+        </form>
+    </div>
+{% endblock %}

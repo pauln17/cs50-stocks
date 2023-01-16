@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stock
+{% endblock %}
+
+{% block main %}
+    <h1>Purchase Shares</h1>
+    <form class="form-styling" action="/buy" method="post">
+        <div class="form-group">
+            <input style='margin-bottom: 10px; width: 200px' autofocus required class="form-control" name="symbol" placeholder="Symbol" type="text">
+            <input required class="form-control" style='margin-bottom: 10px; width: 120px' name="shares" placeholder="Shares" type="number" min="1">
+        </div>
+
+        <button style='width: 200px; background-color: green;' class="form-group btn btn-success" type="submit">Buy</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+    <h1>Transaction History</h1>
+    <table class="quoted">
+        <thead>
+            <tr class="quoted_row">
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Transaction</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in transaction_info %}
+                <tr class="quoted_row">
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["name"] }}</td>
+                    <td>{{ stock["price"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["transactions"] }}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stock
+{% endblock %}
+
+{% block main %}
+    <table class="quoted">
+        <thead>
+            <tr class="quoted_row">
+                <th>Name</th>
+                <th>Price</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Transaction</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="quoted_row">
+                <td>{{ name }}</td>
+                <td>{{ price }}</td>
+                <td>{{ symbol }}</td>
+                <td>
+                    <input id="shares" name="shares" placeholder="Shares" type="number">
+                </td>
+                <td>
+                    <form action="/buy" method="post">
+                        <button class="btn btn-primary" type="submit">Buy</button>
+                    </form>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+{% endblock %}
